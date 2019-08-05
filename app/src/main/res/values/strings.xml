@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidPemulaSubmission</string>
+    <string name="food_name">Makanan</string>
+    <string name="description">deskripsi</string>
+    <string name="favorite">favorit\\</string>
+    <string name="share">share</string>
+</resources>
