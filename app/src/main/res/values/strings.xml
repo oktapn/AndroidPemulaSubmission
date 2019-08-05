@@ -2,6 +2,11 @@
     <string name="app_name">AndroidPemulaSubmission</string>
     <string name="food_name">Makanan</string>
     <string name="description">deskripsi</string>
-    <string name="favorite">favorit\\</string>
+    <string name="favorite">favorit</string>
     <string name="share">share</string>
+    <string name="dummy_photos">dummy</string>
+    <string name="money">deskripsi</string>
+    <string name="nama">Okta Nainggolan</string>
+    <string name="email">okta.p.nainggolan@gmail.com</string>
+    <string name="action_settings">About Us</string>
 </resources>
