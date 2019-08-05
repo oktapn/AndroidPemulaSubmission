@@ -26,6 +26,11 @@ public class CardViewFoodsAdapter extends RecyclerView.Adapter<CardViewFoodsAdap
         this.listFoods = listFoods;
     }
 
+    private OnItemClickCallback onItemClickCallback;
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
     @NonNull
     @Override
     public CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -60,7 +65,7 @@ public class CardViewFoodsAdapter extends RecyclerView.Adapter<CardViewFoodsAdap
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Kamu memilih " + listFoods.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+                onItemClickCallback.onItemClicked(listFoods.get(holder.getAdapterPosition()));
             }
         });
     }
@@ -83,5 +88,9 @@ public class CardViewFoodsAdapter extends RecyclerView.Adapter<CardViewFoodsAdap
             btnFavorite = itemView.findViewById(R.id.btn_set_favorite);
             btnShare = itemView.findViewById(R.id.btn_set_share);
         }
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Foods data);
     }
 }

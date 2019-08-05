@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import id.co.muf.okta.androidpemulasubmission.R;
 import id.co.muf.okta.androidpemulasubmission.about.AboutActivity;
+import id.co.muf.okta.androidpemulasubmission.detail.DetailActivity;
 import id.co.muf.okta.androidpemulasubmission.home.adapter.CardViewFoodsAdapter;
 import id.co.muf.okta.androidpemulasubmission.home.model.Foods;
 import id.co.muf.okta.androidpemulasubmission.home.model.FoodsData;
@@ -36,7 +37,21 @@ public class MainActivity extends AppCompatActivity {
     private void showRecyclerList() {
         rvFoods.setLayoutManager(new LinearLayoutManager(this));
         CardViewFoodsAdapter cardViewFoodsAdapter = new CardViewFoodsAdapter(list);
+        cardViewFoodsAdapter.setOnItemClickCallback(new CardViewFoodsAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Foods data) {
+                sendDataActivity(data);
+            }
+        });
         rvFoods.setAdapter(cardViewFoodsAdapter);
+    }
+
+    private void sendDataActivity(Foods data) {
+        Intent moveWithDataIntent = new Intent(this, DetailActivity.class);
+        moveWithDataIntent.putExtra("NAMA", data.getName());
+        moveWithDataIntent.putExtra("DESC", data.getDesc());
+        moveWithDataIntent.putExtra("IMG", data.getPhoto());
+        startActivity(moveWithDataIntent);
     }
 
     private void setActionBarTitle(String title) {

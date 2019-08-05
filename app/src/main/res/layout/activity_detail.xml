@@ -32,6 +32,7 @@
                 android:drawablePadding="4dp"
                 android:gravity="center_vertical"
                 android:padding="8dp"
+                android:textSize="15sp"
                 android:text="@string/dummy_photos"
                 android:textColor="@android:color/white"
                 android:layout_marginLeft="16dp" />
@@ -43,7 +44,7 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="8dp"
             android:text="@string/money"
-            android:textSize="32sp" />
+            android:textSize="12sp" />
 
     </LinearLayout>
 </ScrollView>
